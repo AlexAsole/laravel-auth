@@ -1,7 +1,16 @@
 @extends('template.base')
 
 @section('content')
-        <table class="table">
+
+    @if (Auth::check())
+        <a href="{{ route('movie.create') }}">
+            <button class="btn btn-primary">
+                New Movie
+            </button>
+        </a>
+
+    @endif
+    <table class="table">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
